@@ -1,9 +1,9 @@
 :root {
-    --primary: #007BFF; /* Azul */
-    --secondary: #28A745; /* Verde */
+    --primary: #007BFF;
+    --secondary: #28A745;
     --light: rgb(70, 247, 70);
     --dark: #12141D;
-    --navbar-bg: linear-gradient(to bottom, #007BFF, #28A745); /* Nuevo fondo degradado para la barra de navegación */
+    --navbar-bg: linear-gradient(to bottom, #007BFF, #28A745);
 }
 
 .back-to-top {
@@ -27,25 +27,25 @@
 #spinner {
     opacity: 0;
     visibility: hidden;
-    transition: opacity .5s ease-out, visibility 0s linear .5s;
+    transition: opacity 0.5s ease-out, visibility 0s linear 0.5s;
     z-index: 99999;
 }
 
 #spinner.show {
-    transition: opacity .5s ease-out, visibility 0s linear 0s;
+    transition: opacity 0.5s ease-out, visibility 0s linear 0s;
     visibility: visible;
     opacity: 1;
 }
 
 .btn {
     font-weight: 500;
-    transition: .5s;
+    transition: 0.5s;
 }
 
 .btn.btn-primary,
 .btn.btn-secondary {
     color: #f5f5f5;
-    background-color: var(--primary); /* Cambia el fondo de los botones a azul */
+    background-color: var(--primary);
 }
 
 .btn-square {
@@ -73,14 +73,12 @@
     font-weight: normal;
 }
 
-/* Estilo de la barra de navegación */
 .navbar.fixed-top {
     display: none;
-    transition: .5s;
-    background: var(--navbar-bg); /* Fondo degradado para la barra de navegación */
+    transition: 0.5s;
+    background: var(--navbar-bg);
 }
 
-/* Estilo de los enlaces de navegación */
 .navbar .navbar-nav .nav-link {
     padding: 20px 15px;
     color: var(--dark);
@@ -94,36 +92,30 @@
     color: var(--primary);
 }
 
-/* Cambiar color de la barra y fondo del centro del logo */
 .navbar.fixed-top .navbar-brand {
-    color: var(--nuevo-color); /* Cambia el color del texto del logo */
-    background-color: var(--nuevo-fondo); /* Cambia el color de fondo del área del logo */
+    color: var(--nuevo-color);
+    background-color: var(--nuevo-fondo);
 }
 
-
 @media (max-width: 991.98px) {
-    .navbar .navbar-nav .nav-link  {
+    .navbar .navbar-nav .nav-link {
         padding: 10px 0;
     }
 }
 
 .text-primary.fw-bold.m-0 {
-    background: linear-gradient(to right, #00ff00, #008000); /* Degradado verde */
-    /* Puedes ajustar los colores y la dirección del degradado según tus preferencias */
-    color: #0d836f; /* Color del texto en caso de que quieras ajustarlo */
-    /* Otras propiedades de estilo que desees aplicar */
+    background: linear-gradient(to right, #00ff00, #008000);
+    color: #0d836f;
 }
 
 a.navbar-brand.bg-secondary.py-3.px-4.mx-3.d-none.d-lg-block {
-    background: linear-gradient(to right, #00ff00, #008000); /* Degradado verde */
-    /* Puedes ajustar los colores y la dirección del degradado según tus preferencias */
-    color: #fff; /* Color del texto en caso de que quieras ajustarlo */
-    /* Otras propiedades de estilo que desees aplicar */
+    background: linear-gradient(to right, #00ff00, #008000);
+    color: #fff;
 }
 
 #home {
     margin-bottom: 6rem;
-    background: var(--navbar-bg); /* Usa el mismo fondo degradado para la sección home */
+    background: var(--navbar-bg);
     background-size: cover;
     background-position: center;
 }
@@ -268,281 +260,12 @@ a.navbar-brand.bg-secondary.py-3.px-4.mx-3.d-none.d-lg-block {
     background-size: cover;
 }
 
-:root {
-    --primary: #007BFF; /* Azul */
-    --secondary: #28A745; /* Verde */
-    --light: rgb(70, 247, 70);
-    --dark: #12141D;
-    --navbar-bg: linear-gradient(to bottom, #007BFF, #28A745); /* Nuevo fondo degradado para la barra de navegación */
-}
-
-.back-to-top {
-    position: fixed;
-    display: none;
-    right: 45px;
-    bottom: 45px;
-    z-index: 99;
-}
-
-.my-6 {
-    margin-top: 6rem;
-    margin-bottom: 6rem;
-}
-
-.py-6 {
-    padding-top: 6rem;
-    padding-bottom: 6rem;
-}
-
-#spinner {
-    opacity: 0;
-    visibility: hidden;
-    transition: opacity .5s ease-out, visibility 0s linear .5s;
-    z-index: 99999;
-}
-
-#spinner.show {
-    transition: opacity .5s ease-out, visibility 0s linear 0s;
-    visibility: visible;
-    opacity: 1;
-}
-
-.btn {
-    font-weight: 500;
-    transition: .5s;
-}
-
-.btn.btn-primary,
-.btn.btn-secondary {
-    color: #f5f5f5;
-    background-color: var(--primary); /* Cambia el fondo de los botones a azul */
-}
-
-.btn-square {
-    width: 38px;
-    height: 38px;
-}
-
-.btn-sm-square {
-    width: 32px;
-    height: 32px;
-}
-
-.btn-lg-square {
-    width: 48px;
-    height: 48px;
-}
-
-.btn-square,
-.btn-sm-square,
-.btn-lg-square {
-    padding: 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-weight: normal;
-}
-
-/* Estilo de la barra de navegación */
-.navbar.fixed-top {
-    display: none;
-    transition: .5s;
-    background: var(--navbar-bg); /* Fondo degradado para la barra de navegación */
-}
-
-/* Estilo de los enlaces de navegación */
-.navbar .navbar-nav .nav-link {
-    padding: 20px 15px;
-    color: var(--dark);
-    font-size: 18px;
-    font-weight: 600;
-    outline: none;
-}
-
-.navbar .navbar-nav .nav-link:hover,
-.navbar .navbar-nav .nav-link.active {
-    color: var(--primary);
-}
-
-/* Cambiar color de la barra y fondo del centro del logo */
-.navbar.fixed-top .navbar-brand {
-    color: var(--nuevo-color); /* Cambia el color del texto del logo */
-    background-color: var(--nuevo-fondo); /* Cambia el color de fondo del área del logo */
-}
-
-
-@media (max-width: 991.98px) {
-    .navbar .navbar-nav .nav-link  {
-        padding: 10px 0;
-    }
-}
-
-.text-primary.fw-bold.m-0 {
-    background: linear-gradient(to right, #00ff00, #008000); /* Degradado verde */
-    /* Puedes ajustar los colores y la dirección del degradado según tus preferencias */
-    color: #0d836f; /* Color del texto en caso de que quieras ajustarlo */
-    /* Otras propiedades de estilo que desees aplicar */
-}
-
-a.navbar-brand.bg-secondary.py-3.px-4.mx-3.d-none.d-lg-block {
-    background: linear-gradient(to right, #00ff00, #008000); /* Degradado verde */
-    /* Puedes ajustar los colores y la dirección del degradado según tus preferencias */
-    color: #fff; /* Color del texto en caso de que quieras ajustarlo */
-    /* Otras propiedades de estilo que desees aplicar */
-}
-
-#home {
-    margin-bottom: 6rem;
-    background: var(--navbar-bg); /* Usa el mismo fondo degradado para la sección home */
-    background-size: cover;
-    background-position: center;
-}
-
-.typed-cursor {
-    font-size: 30px;
-    color: var(--dark);
-}
-
-.btn-play {
-    position: relative;
-    display: block;
-    box-sizing: content-box;
-    width: 16px;
-    height: 26px;
-    border-radius: 100%;
-    border: none;
-    outline: none !important;
-    padding: 18px 20px 20px 28px;
-    background: var(--primary);
-}
-
-.btn-play:before {
-    content: "";
-    position: absolute;
-    z-index: 0;
-    left: 50%;
-    top: 50%;
-    transform: translateX(-50%) translateY(-50%);
-    display: block;
-    width: 60px;
-    height: 60px;
-    background: var(--primary);
-    border-radius: 100%;
-    animation: pulse-border 1500ms ease-out infinite;
-}
-
-.btn-play:after {
-    content: "";
-    position: absolute;
-    z-index: 1;
-    left: 50%;
-    top: 50%;
-    transform: translateX(-50%) translateY(-50%);
-    display: block;
-    width: 60px;
-    height: 60px;
-    background: #FFFFFF;
-    border-radius: 100%;
-    transition: all 200ms;
-}
-
-.btn-play span {
-    display: block;
-    position: relative;
-    z-index: 3;
-    width: 0;
-    height: 0;
-    left: -1px;
-    border-left: 16px solid var(--primary);
-    border-top: 11px solid transparent;
-    border-bottom: 11px solid transparent;
-}
-
-@keyframes pulse-border {
-    0% {
-        transform: translateX(-50%) translateY(-50%) translateZ(0) scale(1);
-        opacity: 1;
-    }
-
-    100% {
-        transform: translateX(-50%) translateY(-50%) translateZ(0) scale(2);
-        opacity: 0;
-    }
-}
-
-.modal-video .modal-dialog {
-    position: relative;
-    max-width: 800px;
-    margin: 60px auto 0 auto;
-}
-
-.modal-video .modal-body {
-    position: relative;
-    padding: 0px;
-}
-
-.modal-video .close {
-    position: absolute;
-    width: 30px;
-    height: 30px;
-    right: 0px;
-    top: -30px;
-    z-index: 999;
-    font-size: 30px;
-    font-weight: normal;
-    color: #FFFFFF;
-    background: #000000;
-    opacity: 1;
-}
-
-#about .years .display-1 {
-    font-size: 10rem;
-    line-height: 9rem;
-}
-
-#about .years h5 {
-    letter-spacing: 30px;
-    margin-right: -30px;
-}
-
-#skill .progress {
-    height: 5px;
-    border-radius: 5px;
-}
-
-#skill .progress .progress-bar {
-    width: 0px;
-    border-radius: 5px;
-    transition: 3s;
-}
-
-#skill .nav-pills .nav-link {
-    color: var(--dark);
-}
-
-#skill .nav-pills .nav-link.active {
-    color: #FFFFFF;
-}
-
-#skill .tab-content hr {
-    width: 30px;
-}
-
-.service-item .bg-icon {
-    width: 100px;
-    height: 100px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background: url(../img/bg-icon.png) center center no-repeat;
-    background-size: cover;
-} mejorar los estilos responsive para que todos los objetos se adaten a todas la pantallas de manera armonica
 #portfolio-flters li {
     display: inline-block;
     font-weight: 500;
     color: var(--dark);
     cursor: pointer;
-    transition: .5s;
+    transition: 0.5s;
     border-bottom: 2px solid transparent;
 }
 
@@ -562,14 +285,14 @@ a.navbar-brand.bg-secondary.py-3.px-4.mx-3.d-none.d-lg-block {
     height: 100%;
     top: 0;
     left: 0;
-    background: rgba(98, 68, 197, .9);
+    background: rgba(98, 68, 197, 0.9);
     display: flex;
     align-items: flex-end;
     justify-content: flex-start;
     padding: 30px;
     padding-bottom: 100px !important;
     opacity: 0;
-    transition: .5s;
+    transition: 0.5s;
 }
 
 .portfolio-item:hover .portfolio-btn {
@@ -578,11 +301,11 @@ a.navbar-brand.bg-secondary.py-3.px-4.mx-3.d-none.d-lg-block {
 }
 
 .team-item img {
-    transition: .5s;
+    transition: 0.5s;
 }
 
 .team-item:hover img {
-    opacity: .7;
+    opacity: 0.7;
 }
 
 .team-item .team-text {
@@ -594,7 +317,7 @@ a.navbar-brand.bg-secondary.py-3.px-4.mx-3.d-none.d-lg-block {
     align-items: center;
     justify-content: space-between;
     opacity: 0;
-    transition: .5s;
+    transition: 0.5s;
 }
 
 .team-item:hover .team-text {
@@ -603,7 +326,7 @@ a.navbar-brand.bg-secondary.py-3.px-4.mx-3.d-none.d-lg-block {
 }
 
 .team-item .team-text div {
-    transition: .5s;
+    transition: 0.5s;
 }
 
 .team-item:hover .team-text div {
@@ -686,7 +409,7 @@ a.navbar-brand.bg-secondary.py-3.px-4.mx-3.d-none.d-lg-block {
     background: #FFFFFF;
     border: 2px solid var(--secondary);
     border-radius: 30px;
-    transition: .5s;
+    transition: 0.5s;
 }
 
 .testimonial-carousel .owl-dot::after {
@@ -698,7 +421,7 @@ a.navbar-brand.bg-secondary.py-3.px-4.mx-3.d-none.d-lg-block {
     left: 5px;
     border-radius: 16px;
     background: var(--secondary);
-    transition: .5s;
+    transition: 0.5s;
 }
 
 .testimonial-carousel .owl-dot.active::after {

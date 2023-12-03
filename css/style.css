@@ -1,32 +1,86 @@
 :root {
-    --primary: #007BFF;
-    --secondary: #28A745;
+    --primary: #007BFF; /* Azul */
+    --secondary: #28A745; /* Verde */
     --light: rgb(70, 247, 70);
     --dark: #12141D;
-    --navbar-bg: linear-gradient(to bottom, #007BFF, #28A745);
-    --nuevo-color: #your-new-color; /* Define your new color */
-    --nuevo-fondo: #your-new-background-color; /* Define your new background color */
+    --navbar-bg: linear-gradient(to bottom, #007BFF, #28A745); /* Nuevo fondo degradado para la barra de navegación */
 }
 
-/* Default styles */
-body {
-    font-family: 'Your Font', sans-serif; /* Replace 'Your Font' with your preferred font-family */
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+.back-to-top {
+    position: fixed;
+    display: none;
+    right: 45px;
+    bottom: 45px;
+    z-index: 99;
 }
 
-/* Navigation Styles */
-.navbar.fixed-top {
+.my-6 {
+    margin-top: 6rem;
+    margin-bottom: 6rem;
+}
+
+.py-6 {
+    padding-top: 6rem;
+    padding-bottom: 6rem;
+}
+
+#spinner {
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity .5s ease-out, visibility 0s linear .5s;
+    z-index: 99999;
+}
+
+#spinner.show {
+    transition: opacity .5s ease-out, visibility 0s linear 0s;
+    visibility: visible;
+    opacity: 1;
+}
+
+.btn {
+    font-weight: 500;
     transition: .5s;
-    background: var(--navbar-bg);
 }
 
-.navbar .navbar-brand {
-    color: var(--nuevo-color);
-    background-color: var(--nuevo-fondo);
+.btn.btn-primary,
+.btn.btn-secondary {
+    color: #f5f5f5;
+    background-color: var(--primary); /* Cambia el fondo de los botones a azul */
 }
 
+.btn-square {
+    width: 38px;
+    height: 38px;
+}
+
+.btn-sm-square {
+    width: 32px;
+    height: 32px;
+}
+
+.btn-lg-square {
+    width: 48px;
+    height: 48px;
+}
+
+.btn-square,
+.btn-sm-square,
+.btn-lg-square {
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: normal;
+}
+
+/* Estilo de la barra de navegación */
+.navbar.fixed-top {
+    display: none;
+    transition: .5s;
+    background: var(--navbar-bg); /* Fondo degradado para la barra de navegación */
+}
+
+/* Estilo de los enlaces de navegación */
 .navbar .navbar-nav .nav-link {
     padding: 20px 15px;
     color: var(--dark);
@@ -40,10 +94,36 @@ body {
     color: var(--primary);
 }
 
-/* Header Section Styles */
+/* Cambiar color de la barra y fondo del centro del logo */
+.navbar.fixed-top .navbar-brand {
+    color: var(--nuevo-color); /* Cambia el color del texto del logo */
+    background-color: var(--nuevo-fondo); /* Cambia el color de fondo del área del logo */
+}
+
+
+@media (max-width: 991.98px) {
+    .navbar .navbar-nav .nav-link  {
+        padding: 10px 0;
+    }
+}
+
+.text-primary.fw-bold.m-0 {
+    background: linear-gradient(to right, #00ff00, #008000); /* Degradado verde */
+    /* Puedes ajustar los colores y la dirección del degradado según tus preferencias */
+    color: #0d836f; /* Color del texto en caso de que quieras ajustarlo */
+    /* Otras propiedades de estilo que desees aplicar */
+}
+
+a.navbar-brand.bg-secondary.py-3.px-4.mx-3.d-none.d-lg-block {
+    background: linear-gradient(to right, #00ff00, #008000); /* Degradado verde */
+    /* Puedes ajustar los colores y la dirección del degradado según tus preferencias */
+    color: #fff; /* Color del texto en caso de que quieras ajustarlo */
+    /* Otras propiedades de estilo que desees aplicar */
+}
+
 #home {
     margin-bottom: 6rem;
-    background: var(--navbar-bg);
+    background: var(--navbar-bg); /* Usa el mismo fondo degradado para la sección home */
     background-size: cover;
     background-position: center;
 }
@@ -53,31 +133,6 @@ body {
     color: var(--dark);
 }
 
-/* Button Styles */
-.btn {
-    font-weight: 500;
-    transition: .5s;
-}
-
-.btn.btn-primary,
-.btn.btn-secondary {
-    color: #f5f5f5;
-    background-color: var(--primary);
-}
-
-.btn-square,
-.btn-sm-square,
-.btn-lg-square {
-    width: 38px;
-    height: 38px;
-    padding: 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-weight: normal;
-}
-
-/* Play Button Styles */
 .btn-play {
     position: relative;
     display: block;
@@ -91,26 +146,33 @@ body {
     background: var(--primary);
 }
 
-.btn-play:before,
-.btn-play:after {
+.btn-play:before {
     content: "";
     position: absolute;
     z-index: 0;
     left: 50%;
     top: 50%;
     transform: translateX(-50%) translateY(-50%);
+    display: block;
     width: 60px;
     height: 60px;
-    border-radius: 100%;
-}
-
-.btn-play:before {
     background: var(--primary);
+    border-radius: 100%;
     animation: pulse-border 1500ms ease-out infinite;
 }
 
 .btn-play:after {
+    content: "";
+    position: absolute;
+    z-index: 1;
+    left: 50%;
+    top: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    display: block;
+    width: 60px;
+    height: 60px;
     background: #FFFFFF;
+    border-radius: 100%;
     transition: all 200ms;
 }
 
@@ -138,7 +200,6 @@ body {
     }
 }
 
-/* Modal Video Styles */
 .modal-video .modal-dialog {
     position: relative;
     max-width: 800px;
@@ -164,7 +225,6 @@ body {
     opacity: 1;
 }
 
-/* About Section Styles */
 #about .years .display-1 {
     font-size: 10rem;
     line-height: 9rem;
@@ -175,7 +235,6 @@ body {
     margin-right: -30px;
 }
 
-/* Skill Section Styles */
 #skill .progress {
     height: 5px;
     border-radius: 5px;
@@ -199,7 +258,16 @@ body {
     width: 30px;
 }
 
-/* Portfolio Section Styles */
+.service-item .bg-icon {
+    width: 100px;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: url(../img/bg-icon.png) center center no-repeat;
+    background-size: cover;
+}
+
 #portfolio-flters li {
     display: inline-block;
     font-weight: 500;
@@ -240,7 +308,6 @@ body {
     padding-bottom: 30px !important;
 }
 
-/* Team Section Styles */
 .team-item img {
     transition: .5s;
 }
@@ -274,7 +341,6 @@ body {
     margin-left: 30px;
 }
 
-/* Testimonial Section Styles */
 .testimonial-left,
 .testimonial-right {
     position: relative;
@@ -370,7 +436,6 @@ body {
     background: var(--primary);
 }
 
-/* Image Styles */
 img.img-fluid {
     background-color: transparent;
     max-width: 100%;
@@ -379,84 +444,17 @@ img.img-fluid {
     margin: 0 auto;
 }
 
-/* Responsive Styles */
-@media (max-width: 575.98px) {
-    .navbar .navbar-nav .nav-link {
-        padding: 8px 0;
-        font-size: 14px;
-    }
+div.row.g-5.align-items-center {
+    background-color: white;
+    padding: 20px;
 
-    .btn-play {
-        padding: 10px 12px 12px 16px;
-    }
-
-    .modal-video .modal-dialog {
-        margin: 10px auto 0 auto;
-        max-width: 300px;
-    }
-
-    /* Add other responsive styles for extra small screens here */
-}
-
-@media (min-width: 576px) and (max-width: 767.98px) {
-    .navbar .navbar-nav .nav-link {
-        padding: 10px 0;
-        font-size: 16px;
-    }
-
-    .btn-play {
-        padding: 12px 14px 14px 18px;
-    }
-
-    .modal-video .modal-dialog {
-        margin: 15px auto 0 auto;
-        max-width: 400px;
-    }
-
-    /* Add other responsive styles for small screens here */
-}
-
-@media (min-width: 768px) and (max-width: 991.98px) {
-    .navbar .navbar-nav .nav-link {
-        padding: 10px 0;
-    }
-
-    .btn-play {
-        padding: 15px 16px 16px 20px;
-    }
-
-    .modal-video .modal-dialog {
-        margin: 30px auto 0 auto;
-        max-width: 600px;
-    }
-
-    /* Add other responsive styles for medium-sized screens here */
-}
-
-@media (min-width: 992px) {
-    .navbar .navbar-nav .nav-link {
-        padding: 20px 15px;
-    }
-
-    .navbar.fixed-top {
+    img {
+        background-color: blue;
+        max-width: 100%;
+        height: auto;
         display: block;
+        margin: 0 auto;
+        object-fit: cover;
+        max-height: 200px;
     }
-
-    #home {
-        margin-bottom: 6rem;
-        background: var(--navbar-bg);
-        background-size: cover;
-        background-position: center;
-    }
-
-    .btn-play {
-        padding: 18px 20px 20px 28px;
-    }
-
-    .modal-video .modal-dialog {
-        margin: 60px auto 0 auto;
-        max-width: 800px;
-    }
-
-    /* Add other responsive styles for large screens here */
 }

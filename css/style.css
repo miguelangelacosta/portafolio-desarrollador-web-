@@ -92,6 +92,7 @@
 .navbar .navbar-nav .nav-link.active {
     color: var(--primary);
 }
+
 @media (max-width: 991.98px) {
     .navbar .navbar-nav .nav-link {
         padding: 10px 15px;
@@ -146,12 +147,11 @@
     }
 }
 
-
 /*** Header ***/
 #home {
-    margin-bottom: 6rem;
-    background: url(../img/Leonardo_Diffusion_XL_Picture_an_image_that_represents_the_con_0.jpg) left top no-repeat;
-    background-color: rgb(106, 172, 243); /* Agrega un fondo azul al área de inicio */
+    margin-bottom: 3rem; /* Reducir el margen inferior */
+    background-size: cover; /* Asegurar que la imagen de fondo cubra completamente */
+    background-position: center center; /* Centrar la imagen de fondo */
 }
 
 .typed-cursor {
@@ -172,46 +172,16 @@
     background: var(--primary);
 }
 
-.btn-play:before {
-    content: "";
-    position: absolute;
-    z-index: 0;
-    left: 50%;
-    top: 50%;
-    transform: translateX(-50%) translateY(-50%);
-    display: block;
-    width: 60px;
-    height: 60px;
-    background: var(--primary);
-    border-radius: 100%;
-    animation: pulse-border 1500ms ease-out infinite;
-}
-
+.btn-play:before,
 .btn-play:after {
-    content: "";
-    position: absolute;
-    z-index: 1;
-    left: 50%;
-    top: 50%;
-    transform: translateX(-50%) translateY(-50%);
-    display: block;
-    width: 60px;
-    height: 60px;
-    background: #FFFFFF;
-    border-radius: 100%;
-    transition: all 200ms;
+    width: 40px;
+    height: 40px;
 }
 
 .btn-play span {
-    display: block;
-    position: relative;
-    z-index: 3;
-    width: 0;
-    height: 0;
-    left: -1px;
-    border-left: 16px solid var(--primary);
-    border-top: 11px solid transparent;
-    border-bottom: 11px solid transparent;
+    border-left: 10px solid var(--primary);
+    border-top: 7px solid transparent;
+    border-bottom: 7px solid transparent;
 }
 
 @keyframes pulse-border {
@@ -476,6 +446,7 @@ img.img-fluid {
     margin: 0 auto; /* Centra la imagen horizontalmente */
 }
 
+MigueL ANGEL
 div.row.g-5.align-items-center {
     background-color: white; /* Establece el fondo blanco para el contenedor */
     padding: 20px; /* Ajusta el relleno según sea necesario */

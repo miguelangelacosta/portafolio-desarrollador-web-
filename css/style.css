@@ -5,6 +5,11 @@
     --dark: #12141D;
 }
 
+body {
+    margin: 0;
+    padding: 0;
+}
+
 .back-to-top {
     position: fixed;
     display: none;
@@ -141,6 +146,8 @@
     background-color: rgb(106, 172, 243);
     background-size: cover;
     padding: 3rem;
+    width: 100%;
+    box-sizing: border-box;
 }
 
 .typed-cursor {

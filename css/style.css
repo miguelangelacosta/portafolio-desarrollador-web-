@@ -475,13 +475,6 @@ img.img-fluid {
 div.row.g-5.align-items-center {
     background-color: white;
     padding: 20px;
-
-    img {
-        max-width: 100%;
-        height: auto;
-        display: block;
-        margin: 0 auto;
-    }
 }
 
 /* Ajustes generales para pantallas más pequeñas */

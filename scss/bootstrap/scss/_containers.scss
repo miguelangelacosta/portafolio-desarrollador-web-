@@ -30,6 +30,22 @@
             @extend %responsive-container-#{$breakpoint};
           }
 
+
+          /* Para tabletas */
+@media (min-width: 768px) and (max-width: 1024px) {
+  /* Tus estilos aquí */
+}
+
+/* Para móviles */
+@media (max-width: 767px) {
+  /* Tus estilos aquí */
+}
+
+/* Para escritorios */
+@media (min-width: 1025px) {
+  /* Tus estilos aquí */
+}
+
           // Once the current breakpoint is reached, stop extending
           @if ($breakpoint == $name) {
             $extend-breakpoint: false;

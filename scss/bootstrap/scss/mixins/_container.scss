@@ -7,3 +7,6 @@
   margin-right: auto;
   margin-left: auto;
 }
+.container {
+  @include make-container($container-padding-x); // Asegúrate de definir la variable $container-padding-x o pasar un valor específico
+}

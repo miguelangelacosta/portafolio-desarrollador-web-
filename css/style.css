@@ -1,28 +1,32 @@
 :root {
-    --primary: #6244C5;
-    --secondary: #FFC448;
-    --light: #FAFAFB;
+    --primary: #007BFF; /* Azul */
+    --secondary: #28A745; /* Verde */
+    --light: rgb(70, 247, 70);
     --dark: #12141D;
+}
+
+body {
+    margin: 0;
+    padding: 0;
 }
 
 .back-to-top {
     position: fixed;
     display: none;
-    right: 45px;
-    bottom: 45px;
+    right: 15px;
+    bottom: 15px;
     z-index: 99;
 }
 
 .my-6 {
-    margin-top: 6rem;
-    margin-bottom: 6rem;
+    margin-top: 3rem;
+    margin-bottom: 3rem;
 }
 
 .py-6 {
-    padding-top: 6rem;
-    padding-bottom: 6rem;
+    padding-top: 3rem;
+    padding-bottom: 3rem;
 }
-
 
 /*** Spinner ***/
 #spinner {
@@ -38,7 +42,6 @@
     opacity: 1;
 }
 
-
 /*** Button ***/
 .btn {
     font-weight: 500;
@@ -47,34 +50,21 @@
 
 .btn.btn-primary,
 .btn.btn-secondary {
-    color: #FFFFFF;
-}
-
-.btn-square {
-    width: 38px;
-    height: 38px;
-}
-
-.btn-sm-square {
-    width: 32px;
-    height: 32px;
-}
-
-.btn-lg-square {
-    width: 48px;
-    height: 48px;
+    color: #f5f5f5;
+    background-color: var(--primary);
 }
 
 .btn-square,
 .btn-sm-square,
 .btn-lg-square {
+    width: 38px;
+    height: 38px;
     padding: 0;
     display: flex;
     align-items: center;
     justify-content: center;
     font-weight: normal;
 }
-
 
 /*** Navbar ***/
 .navbar.fixed-top {
@@ -96,20 +86,72 @@
 }
 
 @media (max-width: 991.98px) {
-    .navbar .navbar-nav .nav-link  {
+    .navbar .navbar-nav .nav-link {
+        padding: 10px 15px;
+    }
+
+    .navbar.fixed-top {
+        padding-top: 56px;
+    }
+
+    .navbar-toggler {
+        padding: .25rem .5rem;
+        font-size: 1.25rem;
+        line-height: 1;
+    }
+
+    .navbar-collapse {
+        max-height: none;
+    }
+
+    .navbar-nav {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .navbar-nav .nav-link {
         padding: 10px 0;
+    }
+
+    .navbar-toggler {
+        margin: .25rem 0;
+    }
+
+    .navbar-collapse.collapse {
+        display: none !important;
+    }
+
+    .navbar-toggler-icon {
+        display: block;
+        background-color: transparent;
+        background-image: none;
+        border: none;
+    }
+
+    .navbar-collapse.show {
+        display: flex !important;
+        flex-basis: 100%;
+        flex-grow: 1;
+    }
+
+    .navbar-brand {
+        margin-right: 0;
     }
 }
 
-
 /*** Header ***/
 #home {
-    margin-bottom: 6rem;
-    background: url(../img/bg-header.png) left top no-repeat;
+    margin-bottom: 3rem;
+    background: url(../img/Leonardo_Diffusion_XL_Picture_an_image_that_represents_the_con_0.jpg) left top no-repeat;
+    background-color: rgb(106, 172, 243);
+    background-size: cover;
+    padding: 3rem;
+    width: 100%;
+    box-sizing: border-box;
 }
 
 .typed-cursor {
-    font-size: 30px;
+    font-size: 20px;
     color: var(--dark);
 }
 
@@ -205,18 +247,16 @@
     opacity: 1;
 }
 
-
 /*** About ***/
 #about .years .display-1 {
-    font-size: 10rem;
-    line-height: 9rem;
+    font-size: 6rem;
+    line-height: 5rem;
 }
 
 #about .years h5 {
-    letter-spacing: 30px;
-    margin-right: -30px;
+    letter-spacing: 15px;
+    margin-right: -15px;
 }
-
 
 /*** Skills ***/
 #skill .progress {
@@ -242,7 +282,6 @@
     width: 30px;
 }
 
-
 /*** Service ***/
 .service-item .bg-icon {
     width: 100px;
@@ -253,7 +292,6 @@
     background: url(../img/bg-icon.png) center center no-repeat;
     background-size: cover;
 }
-
 
 /*** Project Portfolio ***/
 #portfolio-flters li {
@@ -296,7 +334,6 @@
     padding-bottom: 30px !important;
 }
 
-
 /*** Team ***/
 .team-item img {
     transition: .5s;
@@ -309,8 +346,8 @@
 .team-item .team-text {
     position: absolute;
     left: 0;
-    right: 60px;
-    bottom: 30px;
+    right: 30px;
+    bottom: 15px;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -319,7 +356,7 @@
 }
 
 .team-item:hover .team-text {
-    right: 30px;
+    right: 15px;
     opacity: 1;
 }
 
@@ -328,9 +365,8 @@
 }
 
 .team-item:hover .team-text div {
-    margin-left: 30px;
+    margin-left: 15px;
 }
-
 
 /*** Testimonial ***/
 .testimonial-left,
@@ -426,4 +462,63 @@
 
 .testimonial-carousel .owl-dot.active::after {
     background: var(--primary);
+}
+
+img.img-fluid {
+    background-color: transparent;
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+}
+
+div.row.g-5.align-items-center {
+    background-color: white;
+    padding: 20px;
+}
+
+/* Ajustes generales para pantallas más pequeñas */
+@media (max-width: 767.98px) {
+    #home {
+        padding: 1rem;
+    }
+
+    .btn-play {
+        padding: 12px 14px 14px 16px;
+    }
+
+    .navbar .navbar-nav .nav-link {
+        padding: 15px;
+    }
+
+    .navbar.fixed-top {
+        padding-top: 50px;
+    }
+
+    .team-item .team-text {
+        bottom: 10px;
+        right: 10px;
+    }
+
+    .testimonial-left img:nth-child(1),
+    .testimonial-right img:nth-child(3),
+    .testimonial-left img:nth-child(2),
+    .testimonial-right img:nth-child(2),
+    .testimonial-left img:nth-child(3),
+    .testimonial-right img:nth-child(1) {
+        width: 40px;
+        height: 40px;
+    }
+
+    .testimonial-carousel .owl-dot {
+        width: 20px;
+        height: 20px;
+    }
+
+    .testimonial-carousel .owl-dot::after {
+        width: 10px;
+        height: 10px;
+        top: 3px;
+        left: 3px;
+    }
 }
